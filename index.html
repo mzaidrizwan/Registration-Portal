@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Al-Mustafa | Registration</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .card {
+      border-radius: 1.5rem;
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .card-header-custom {
+      background: #0069d9;
+      color: #fff;
+      text-align: center;
+      padding: 1rem 2rem;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .form-label {
+      font-weight: 500;
+    }
+
+    .form-control:focus,
+    .form-select:focus {
+      border-color: #0069d9;
+      box-shadow: 0 0 0 0.2rem rgba(0, 105, 217, 0.25);
+    }
+
+    .btn-submit,
+    .btn-action {
+      border-radius: 50px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-submit:hover,
+    .btn-action:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-action {
+      padding: 0.5rem 1rem;
+      margin-right: 0.5rem;
+    }
+
+    .upload-preview img {
+      max-width: 80px;
+      max-height: 80px;
+      display: none;
+      margin-top: 0.5rem;
+      border-radius: 0.5rem;
+      border: 2px solid #0069d9;
+    }
+
+    .divider {
+      height: 2px;
+      background: #e9ecef;
+      margin: 1.5rem 0;
+    }
+    #academyTitle{
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="card shadow-lg bg-white">
+      <div class="card-header-custom">
+        <div class="d-flex justify-content-center">
+          <button class="btn btn-light btn-action" id="btnRegister">Register</button>
+          <button class="btn btn-outline-light btn-action" id="btnSearchCNIC">Search By CNIC</button>
+        </div>
+      </div>
+      <div class="p-4">
+        <!-- Registration Form -->
+        <div id="regForm">
+          <h1 id="academyTitle" class="text-center text-success mb-1"><u>Al Mustafa Academy</u></h1>
+          <h2 class="text-center text-primary mb-4">Registration Form</h2>
+          <div class="divider"></div>
+          <div class="row g-3">
+            <div class="col-12 col-md-6">
+              <label for="country" class="form-label">Select country</label>
+              <select class="form-select" name="country" id="country">
+                <option value="pakistan">Pakistan</option>
+              </select>
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="city" class="form-label">Select city</label>
+              <select class="form-select" name="city" id="city">
+                <option selected value="karachi">Karachi</option>
+              </select>
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="course" class="form-label">Course or event</label>
+              <select class="form-select" name="course" id="course">
+                <option selected disabled value="">Select one</option>
+                <option value="Web-And-App">Web & Hybrid App</option>
+                <option value="MS-Office">MS Office</option>
+                <option value="Graphic-Design">Graphic Design</option>
+              </select>
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="proficiency" class="form-label">Computer proficiency</label>
+              <select class="form-select" name="proficiency" id="proficiency">
+                <option selected disabled value="">Select level</option>
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+              </select>
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="fullname" class="form-label">Full name</label>
+              <input type="text" id="fullname" class="form-control" placeholder="Full Name" />
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="fathername" class="form-label">Father's name</label>
+              <input type="text" id="fathername" class="form-control" placeholder="Father's name" />
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" id="email" class="form-control" placeholder="you@example.com" />
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="phone" class="form-label">Phone number</label>
+              <input type="text" id="phone" class="form-control" placeholder="+923XX-XXXXXXX" />
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="cnic" class="form-label">CNIC</label>
+              <input type="text" id="cnic" class="form-control" placeholder="XXXXX-XXXXXXX-X" />
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="fathercnic" class="form-label">Father's CNIC (optional)</label>
+              <input type="text" id="fathercnic" class="form-control" placeholder="optional" />
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="dob" class="form-label">Date of Birth</label>
+              <input type="date" id="dob" class="form-control" />
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="gender" class="form-label">Gender</label>
+              <select class="form-select" name="gender" id="gender">
+                <option selected disabled value="">Select gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label for="address" class="form-label">Address</label>
+              <input type="text" id="address" class="form-control" placeholder="Street, City, Country" />
+            </div>
+            <div class="col-12">
+              <label for="qualification" class="form-label">Last qualification</label>
+              <input type="text" id="qualification" class="form-control" placeholder="e.g. Matric" />
+            </div>
+            <div class="col-12">
+              <label for="laptop" class="form-label">Do you have a laptop?</label>
+              <select class="form-select" name="laptop" id="laptop">
+                <option selected disabled value="">Choose one</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label for="picture" class="form-label">Upload picture</label>
+              <input type="file" id="picture" class="form-control" accept="image/*" />
+              <p class="small text-muted">Max size 2MB</p>
+              <div class="upload-preview">
+                <img id="preview" src="" alt="Preview" />
+              </div>
+            </div>
+            <div class="col-12 d-grid mt-4">
+              <button id="submit" class="btn btn-primary btn-submit" type="button">Submit</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Search By CNIC Form -->
+        <div id="searchForm" style="display:none;">
+          <h2 class="text-center text-primary mb-3">Search By CNIC</h2>
+          <div class="divider"></div>
+          <div class="mb-3">
+            <label for="searchCnic" class="form-label">Enter Your CNIC</label>
+            <input type="text" id="searchCnic" class="form-control" placeholder="XXXXX-XXXXXXX-X" />
+          </div>
+          <div class="d-grid gap-2 mb-3">
+            <button id="searchBtn" class="btn btn-primary btn-submit">Search</button>
+          </div>
+          <div id="searchResult" class="mt-3"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js" type="module"></script>
+  <script>
+    const regForm = document.getElementById('regForm');
+    const searchForm = document.getElementById('searchForm');
+    document.getElementById('btnSearchCNIC').addEventListener('click', () => {
+      regForm.style.display = 'none'; searchForm.style.display = 'block';
+    });
+    document.getElementById('btnRegister').addEventListener('click', () => {
+      searchForm.style.display = 'none'; regForm.style.display = 'block';
+    });
+
+    document.getElementById('picture')?.addEventListener('change', function (e) {
+      const img = document.getElementById('preview');
+      const file = e.target.files[0];
+      if (!file) { img.style.display = 'none'; img.src = ''; return; }
+      const reader = new FileReader(); reader.onload = () => { img.src = reader.result; img.style.display = 'block'; };
+      reader.readAsDataURL(file);
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+
+</html>
